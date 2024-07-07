@@ -5,6 +5,8 @@ import { getMoviesList } from "../../utils/MoviesUtils";
 import { validateToken } from "../../utils/validateToken";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

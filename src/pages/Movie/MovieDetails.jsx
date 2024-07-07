@@ -8,6 +8,8 @@ import { addFavoriteMovie } from "../../utils/validadeMovies";
 import { useNavigate } from "react-router-dom";
 import "./movieDetails.css";
 import Navbar from "../../components/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MovieDetails = () => {
@@ -40,8 +42,21 @@ const MovieDetails = () => {
         try {
             const response = await addFavoriteMovie(movieId, userId)
             console.log(response)
+
+            if (response == false) {
+                return toast.error('O Filme já Está na Lista');
+            }
+
+
+            return toast.success('Filme adicionado com Sucesso');
+
+
+
         } catch (error) {
-            console.log(error);
+
+            return toast.error('O Filme já Está na Lista');
+
+
         }
     };
 
@@ -93,6 +108,7 @@ const MovieDetails = () => {
                     </div>
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 };

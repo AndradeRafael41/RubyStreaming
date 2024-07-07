@@ -6,6 +6,7 @@ import Register from './pages/Register/Register';
 import FavMovies from './pages/favMovies/FavMovies';
 import MovieDetails from './pages/Movie/MovieDetails';
 import NotFound from './pages/NotFound/Notfound';
+import LandingPage from './pages/LandingPage/LandingPage';
 //import './App.css';
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/movie/:id' element={<MovieDetails />} />
           <Route path='*' element={<NotFound />} />
+          <Route path= '/' element ={<LandingPage />} />
         </Routes>
       </BrowserRouter>
     </div>

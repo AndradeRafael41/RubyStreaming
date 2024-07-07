@@ -5,10 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const Login = () => {
-
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
     const [password, setPassword] = useState('');
@@ -27,24 +24,20 @@ const Login = () => {
             );
 
             if (response.data.success) {
-
                 sessionStorage.setItem('token', response.data.token);
-                sessionStorage.setItem('user', JSON.stringify(response.data.user))
+                sessionStorage.setItem('user', JSON.stringify(response.data.user));
                 const usr = JSON.parse(sessionStorage.getItem('user'));
                 console.log(usr.email);
                 toast.success('Login Realizado com Sucesso');
 
-                // definindo o token como padrão
                 axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
 
                 setTimeout(() => {
-                    navigate('/home'); // Redirecionamento para a página home após o login
+                    navigate('/home');
                 }, 2000);  
             }
-
         } catch (error) {
-
-            if (email == '' || password == '') {
+            if (email === '' || password === '') {
                 setEmail('');
                 setPassword('');
                 return toast.error('Preencher Email e Senha');
@@ -53,33 +46,26 @@ const Login = () => {
             toast.error('Usuário / Senha Incorretos');
             setEmail('');
             setPassword('');
-
         }
-   
     };
 
     return (
         <>
             <div className="login_page">
+                <div className="logo"></div>
                 <h1>Login</h1>
-
                 <form onSubmit={handleLogin}>
-
                     <div>
                         <label>Email</label>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
-
                     <div>
                         <label>Senha</label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-
                     <button type="submit">Login</button>
                 </form>
-
             </div>
-
             <ToastContainer />
         </>
     );

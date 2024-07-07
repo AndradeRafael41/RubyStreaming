@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,9 +9,10 @@ const Register = () => {
 
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
+    const navigate = useNavigate();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [message, setMessage] = useState('');
+
 
     const handlerRegister = async (event) => {
         event.preventDefault();
@@ -26,8 +28,12 @@ const Register = () => {
                 }
             );
 
-           
-            return toast.success('Cadastrado com Sucesso');
+            toast.success('Cadastrado com Sucesso');
+            setTimeout(() => {
+                return navigate('/login'); // Redirecionamento para a página home após o login
+            }, 3000);
+            
+            
 
         } catch (error) {
 

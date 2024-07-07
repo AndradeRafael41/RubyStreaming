@@ -1,24 +1,33 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import './App.css';
-require("dotenv").config();
+import Home from './pages/Home/Home'
+import Register from './pages/Register/Register';
+import FavMovies from './pages/favMovies/FavMovies';
+import MovieDetails from './pages/Movie/MovieDetails';
+import NotFound from './pages/NotFound/Notfound';
+//import './App.css';
+
 
 function App() {
 
-  const [count, setCount] = useState(0)
 
   return (
+    <div>
+      <header>
 
-    <BrowserRouter>
-      <Routes>
-        <Route path='/login' element={<Login/>} />
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/home' element={<Home/>}/>
-      </Routes>
-    </BrowserRouter>
+      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/favMovies' element={<FavMovies />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/movie/:id' element={<MovieDetails />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 };
 

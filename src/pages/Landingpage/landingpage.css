@@ -1,0 +1,80 @@
+/* landingpage.css */
+
+/* Estilos da Landing Page */
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #0d0d0df1;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.LandingPage header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.LandingPage .content {
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  background:#0d0d0df1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.LandingPage h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+.LandingPage p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: #b3b3b3;
+}
+
+.LandingPage .button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.LandingPage button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.LandingPage .login-button {
+  background-color: #e50914;
+  color: #ffffff;
+}
+
+.LandingPage .register-button {
+  background-color: #f40612;
+  color: #ffffff;
+}
+
+.LandingPage button:hover {
+  background-color: #b20710;
+  transform: scale(1.05);
+}
+
+.LandingPage button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.5);
+}

@@ -1,0 +1,87 @@
+.user_register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d0d0df1; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial, sans-serif; 
+}
+
+.logo {
+    background-image: url('/ruby_preto.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px; 
+    height: 200px; 
+    margin-bottom: 20px;
+}
+
+.user_register h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f7d354;
+}
+
+.user_register form {
+    width: 100%;
+}
+
+.user_register form div {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.user_register form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #f7d354;
+    font-weight: 600;
+}
+.user_register form input {
+    width: calc(100% - 30px);
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.user_register form input:focus {
+    border-color: #880202;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(136, 2, 2, 0.5);
+}
+
+.user_register form button {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #f7d354;
+    color: #880202;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.user_register form button:hover {
+    background: #d7d5d5;
+}
+
+.Toastifytoast--success {
+    background-color: #f7d354 !important;
+    color: #880202 !important;
+}
+
+.Toastifytoast--error {
+    background-color: #880202 !important;
+    color: #f7d354 !important;
+}
